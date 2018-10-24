@@ -1,0 +1,66 @@
+.welcome {
+    width: 98vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.welcome h1 {
+    font-size: 5em;
+}
+
+.gallery {
+    width: 98vw;
+    height: 98vh;
+    h1 {
+        text-align: center;
+        font-size: 60px;
+    }
+    .container {
+        width: 1506px;
+        margin-top: 10px;
+        margin: auto;
+        position: relative;
+        .blank {
+            position: absolute;
+            width: 75%;
+            height: 500px;
+            top: 100px;
+            z-index: 2;
+            left: 10%;
+        }
+        .blank1 {
+            position: absolute;
+            width: 75%;
+            height: 500px;
+            top: 100px;
+            z-index: 2;
+            left: 10%;
+        }
+        span {
+            margin-top: 10px;
+        }
+        div {
+            width: 500px;
+            height: 350px;
+            border: 1px solid black;
+            float: left;
+            margin-top: 10px;
+            z-index: 1;
+        }
+        .gallery1 {
+            margin-top: 10px;
+        }
+    }
+}
+
+span {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
