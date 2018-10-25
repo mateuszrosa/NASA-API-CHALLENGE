@@ -5,71 +5,42 @@
 }
 
 .welcome {
-    width: 98vw;
+    width: 100%;
     height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center
-}
-
-.welcome h1 {
-    font-size: 5em;
+    background-size: cover;
+    h1 {
+        font-size: 40px;
+        text-align: center;
+    }
 }
 
 .gallery {
-    width: 98vw;
-    height: 98vh;
-    .marsItem {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+    width: 100%;
+    height: 100vh;
     h1 {
         text-align: center;
-        font-size: 60px;
+        font-size: 40px;
     }
     .container {
-        width: 1506px;
-        margin-top: 10px;
-        margin: auto;
-        position: relative;
-        .blank {
-            position: absolute;
-            width: 75%;
-            height: 500px;
-            top: 100px;
-            z-index: 2;
-            left: 10%;
-        }
-        .blank1 {
-            position: absolute;
-            width: 75%;
-            height: 500px;
-            top: 100px;
-            z-index: 2;
-            left: 10%;
+        width: 100%;
+        height: 100%;
+        .marsItem {
+            width: 100%;
+            height: 250px;
+            border: 1px solid black;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
         span {
-            margin-top: 10px;
-        }
-        div {
-            width: 500px;
-            height: 350px;
-            border: 1px solid black;
-            float: left;
-            margin-top: 10px;
-            z-index: 1;
-        }
-        .gallery1 {
-            margin-top: 10px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            padding-top: 30px;
         }
     }
-}
-
-span {
-    display: block;
-    font-size: 20px;
-    text-align: center;
+    .gallery1 {
+        margin-top: 720px;
+    }
 }
 
 .hidden {

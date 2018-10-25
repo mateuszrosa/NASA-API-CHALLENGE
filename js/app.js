@@ -1,8 +1,8 @@
 $(function() {
 
-    $(document).ajaxStop(function() {
-        $("#loader-wrapper").hide();
-    });
+    // $(document).ajaxStop(function() {
+    //     $("#loader-wrapper").hide();
+    // });
 
     var sectionWelcome = $(".welcome");
     var url = "https://api.nasa.gov/planetary/apod?";
