@@ -21,6 +21,9 @@
             border: 1px solid black;
             background: #fff;
         }
+        @media (min-width: 1440px) {
+            font-size: 105px;
+        }
     }
 }
 
@@ -38,9 +41,17 @@
             font-size: 80px;
             padding-bottom: 5px;
         }
+        @media (min-width: 1440px) {
+            font-size: 105px;
+        }
     }
     .container {
         width: 100%;
+        @media (min-width: 1024px) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
         .marsItem {
             width: 100%;
             height: 250px;
@@ -51,21 +62,28 @@
                 height: 400px;
             }
             @media (min-width: 1024px) {
-                height: 500px;
+                width: 40%;
+                height: 200px;
+            }
+            @media (min-width: 1440px) {
+                height: 650px;
             }
         }
-        span {
-            display: block;
-            text-align: center;
-            font-size: 30px;
-            padding-top: 30px;
-            padding-bottom: 30px;
-        }
+    }
+    span {
+        display: block;
+        text-align: center;
+        font-size: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 }
 
 .hidden {
     display: none;
+    @media (min-width: 1024px) {
+        display: none;
+    }
 }
 
 #loader-wrapper {
