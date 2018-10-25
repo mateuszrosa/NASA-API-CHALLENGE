@@ -46,27 +46,22 @@ $(function() {
         console.log(error);
     });
 
-    var urlMars = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?";
-    var url1 = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=MAST&api_key=GVsnIvDsUqzDjGHPX5eS1eHLsVI09H3qwq9gPw3p";
-    var sol = "sol=1000";
-    var camera = "camera=NAVCAM";
+    var urlMars = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=MAST&api_key=GVsnIvDsUqzDjGHPX5eS1eHLsVI09H3qwq9gPw3p";
 
     $.ajax({
-        url: url1
+        url: urlMars
     }).done(function(response) {
         insertPhotos(response);
+        console.log(response.photos);
     }).fail(function(response) {
         console.log(error);
     });
 
     function insertPhotos(nasa) {
-        var divs = $("div");
-        for (var i = 0; i <= divs.length; i++) {
-            var randomPhoto = Math.floor((Math.random() * 800) + 1);
-            $("div#" + [i]).css("background-image", "url(" + nasa.photos[randomPhoto].img_src + ')');
-            $("div#" + [i]).css("background-repeat", "no-repeat");
-            $("div#" + [i]).css("background-size", "cover");
-        }
+        var galleryMarsItems = $(".marsItem");
+        galleryMarsItems.each(function() {
+            $(this).css("background-image", "url(" + nasa.photos[Math.floor((Math.random() * 800) + 1)].img_src + ')');
+        })
     };
 
     $("span").on('click', function() {
