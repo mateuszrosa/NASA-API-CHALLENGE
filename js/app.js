@@ -1,8 +1,8 @@
 $(function() {
 
-    // $(document).ajaxStop(function() {
-    //     $("#loader-wrapper").hide();
-    // });
+    $(document).ajaxStop(function() {
+        $("#loader-wrapper").hide();
+    });
 
     var sectionWelcome = $(".welcome");
     var url = "https://api.nasa.gov/planetary/apod?";
@@ -30,7 +30,6 @@ $(function() {
         return randomYear + "-" + randomMonth + "-" + randomDay;
     }
     var res = randomingDate();
-    console.log(res);
     var date = "date=" + res;
 
     function welcome(nasa) {
@@ -75,6 +74,7 @@ $(function() {
 
     $(".first div").on("click", function() {
         var urlMars = $(this).css("background-image");
+        console.log(urlMars);
         $(".blank").toggle("hidden");
         $(".blank").css("background-image", urlMars);
         $(".blank").css("background-repeat", "no-repeat");
