@@ -1,5 +1,9 @@
 $(function() {
 
+    $(document).ajaxStop(function() {
+        $("#loader-wrapper").hide();
+    });
+
     var sectionWelcome = $(".welcome");
     var url = "https://api.nasa.gov/planetary/apod?";
     var hd = "hd=true";
@@ -52,16 +56,17 @@ $(function() {
         url: urlMars
     }).done(function(response) {
         insertPhotos(response);
-        console.log(response.photos);
     }).fail(function(response) {
         console.log(error);
     });
 
     function insertPhotos(nasa) {
         var galleryMarsItems = $(".marsItem");
-        galleryMarsItems.each(function() {
-            $(this).css("background-image", "url(" + nasa.photos[Math.floor((Math.random() * 800) + 1)].img_src + ')');
-        })
+        if (nasa && document.readyState === "complete") {
+            galleryMarsItems.each(function() {
+                $(this).css("background-image", "url(" + nasa.photos[Math.floor((Math.random() * 800) + 1)].img_src + ')');
+            })
+        }
     };
 
     $("span").on('click', function() {
