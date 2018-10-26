@@ -72,22 +72,27 @@ $(function() {
         $(".gallery1").toggle("hidden");
     });
 
-    $(".first div").on("click", function() {
-        var urlMars = $(this).css("background-image");
-        console.log(urlMars);
-        $(".blank").toggle("hidden");
-        $(".blank").css("background-image", urlMars);
-        $(".blank").css("background-repeat", "no-repeat");
-        $(".blank").css("background-size", "cover");
-    })
+    var mobile = window.matchMedia("(min-width: 1024px)");
 
-    $(".second div").on("click", function() {
-        var urlMars = $(this).css("background-image");
-        $(".blank1").toggle("hidden");
-        $(".blank1").css("background-image", urlMars);
-        $(".blank1").css("background-repeat", "no-repeat");
-        $(".blank1").css("background-size", "cover");
-    })
+    if ($(window).width() >= 1024) {
+        $(".first div").on("click", function() {
+            var urlMars = $(this).css("background-image");
+            $(".blank").toggle("hidden");
+            $(".blank").css("background-image", urlMars);
+            $(".blank").css("background-repeat", "no-repeat");
+            $(".blank").css("background-size", "cover");
+        })
+    }
+
+    if ($(window).width() >= 1024) {
+        $(".second div").on("click", function() {
+            var urlMars = $(this).css("background-image");
+            $(".blank1").toggle("hidden");
+            $(".blank1").css("background-image", urlMars);
+            $(".blank1").css("background-repeat", "no-repeat");
+            $(".blank1").css("background-size", "cover");
+        })
+    }
 
 
 })
