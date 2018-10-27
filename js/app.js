@@ -4,7 +4,7 @@ $(function() {
         $("#loader-wrapper").hide();
     });
 
-    var sectionWelcome = $(".welcome");
+    var sectionWelcome = $("#welcome");
     var url = "https://api.nasa.gov/planetary/apod?";
     var hd = "hd=true";
     var apiKey = "api_key=GVsnIvDsUqzDjGHPX5eS1eHLsVI09H3qwq9gPw3p";
