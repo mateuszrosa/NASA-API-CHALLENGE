@@ -31,12 +31,16 @@ $(function() {
     }
     var res = randomingDate();
     var date = "date=" + res;
+    var dateOfPhoto = $("#date");
+    var title = $("#title");
 
     function welcome(nasa) {
         sectionWelcome.css("background-image", "url(" + nasa.url + ')');
         sectionWelcome.css("background-repeat", "no-repeat");
         sectionWelcome.css("background-size", "contain");
         sectionWelcome.css("background-position", "center");
+        dateOfPhoto.text("Date: " + nasa.date);
+        title.text("Title: " + nasa.title);
     }
 
     url: "https://api.nasa.gov/planetary/apod?date=2018-10-01&hd=true&api_key=GVsnIvDsUqzDjGHPX5eS1eHLsVI09H3qwq9gPw3p"
@@ -65,6 +69,7 @@ $(function() {
             galleryMarsItems.each(function() {
                 $(this).css("background-image", "url(" + nasa.photos[Math.floor((Math.random() * 800) + 1)].img_src + ')');
             })
+            console.log($(this).width);
         }
     };
 
