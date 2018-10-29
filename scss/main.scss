@@ -43,13 +43,13 @@ body {
         text-align: center;
         font-size: 20px;
         margin-top: 10px;
+        font-weight: 800;
         @media (min-width: 768px) {
             font-size: 30px;
         }
         @media (min-width: 1440px) {
             font-size: 40px;
         }
-        &:nth-of-type(2) {}
     }
 }
 
@@ -87,6 +87,7 @@ body {
             background-position: center;
             background-repeat: no-repeat;
             margin-bottom: 10px;
+            border: 3px solid #fff;
             @media (min-width: 768px) {
                 height: 400px;
             }
@@ -108,7 +109,7 @@ body {
             top: 300px;
             z-index: 2;
             left: 10%;
-            border: 1px solid black;
+            border: 3px solid #fff;
         }
         .blank1 {
             position: absolute;
@@ -117,7 +118,7 @@ body {
             top: 300px;
             z-index: 2;
             left: 10%;
-            border: 1px solid black;
+            border: 3px solid #fff;
         }
         span {
             display: block;

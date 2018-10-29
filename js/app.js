@@ -53,12 +53,13 @@ $(function() {
         console.log(error);
     });
 
-    var urlMars = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&camera=MAST&api_key=GVsnIvDsUqzDjGHPX5eS1eHLsVI09H3qwq9gPw3p";
+    var urlMars = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&";
 
     $.ajax({
-        url: urlMars
+        url: urlMars + "&" + apiKey
     }).done(function(response) {
         insertPhotos(response);
+        console.log(response);
     }).fail(function(response) {
         console.log(error);
     });
@@ -69,7 +70,6 @@ $(function() {
             galleryMarsItems.each(function() {
                 $(this).css("background-image", "url(" + nasa.photos[Math.floor((Math.random() * 800) + 1)].img_src + ')');
             })
-            console.log($(this).width);
         }
     };
 
