@@ -36,21 +36,21 @@ body {
             font-size: 105px;
         }
     }
-    span {
-        color: #fff;
-        display: block;
-        width: 100%;
-        text-align: center;
-        font-size: 20px;
-        margin-top: 10px;
-        font-weight: 800;
-        @media (min-width: 768px) {
-            font-size: 30px;
-        }
-        @media (min-width: 1440px) {
-            font-size: 40px;
-        }
-    }
+    // span {
+    //     color: #fff;
+    //     display: block;
+    //     width: 100%;
+    //     text-align: center;
+    //     font-size: 20px;
+    //     margin-top: 10px;
+    //     font-weight: 800;
+    //     @media (min-width: 768px) {
+    //         font-size: 30px;
+    //     }
+    //     @media (min-width: 1440px) {
+    //         font-size: 40px;
+    //     }
+    // }
 }
 
 .gallery {
@@ -120,17 +120,18 @@ body {
             left: 10%;
             border: 3px solid #fff;
         }
-        span {
-            display: block;
-            text-align: center;
-            font-size: 30px;
-            padding-top: 30px;
-            padding-bottom: 30px;
-            color: #fff;
-            @media (min-width: 1024px) {
-                font-size: 50px;
-            }
-        }
+    }
+}
+
+span#more {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #fff;
+    @media (min-width: 1024px) {
+        font-size: 50px;
     }
 }
 
