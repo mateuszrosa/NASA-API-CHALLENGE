@@ -1,14 +1,21 @@
 $(function() {
 
+    // variables
+    var sectionWelcome = $("#welcome");
+    var url = "https://api.nasa.gov/planetary/apod?";
+    var apiKey = "api_key=GVsnIvDsUqzDjGHPX5eS1eHLsVI09H3qwq9gPw3p";
+    var dateOfPhoto = $("#date");
+    var title = $("#title");
+    var urlMars = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&";
+    var res = randomingDate();
+    var mobile = window.matchMedia("(min-width: 1024px)");
+
+    // preloading
     $(document).ajaxStop(function() {
         $("#loader-wrapper").hide();
     });
 
-    var sectionWelcome = $("#welcome");
-    var url = "https://api.nasa.gov/planetary/apod?";
-    var hd = "hd=true";
-    var apiKey = "api_key=GVsnIvDsUqzDjGHPX5eS1eHLsVI09H3qwq9gPw3p";
-
+    // randoming date function
     function randomingDate() {
         var year = new Date();
         var year1 = year.getFullYear();
@@ -29,11 +36,17 @@ $(function() {
         }
         return randomYear + "-" + randomMonth + "-" + randomDay;
     }
-    var res = randomingDate();
-    var date = "date=" + res;
-    var dateOfPhoto = $("#date");
-    var title = $("#title");
 
+    // downloading photo of a day from NASA API
+    $.ajax({
+        url: url + "date=" + res + "&hd=true&" + apiKey
+    }).done(function(response) {
+        welcome(response);
+    }).fail(function(error) {
+        console.log(error);
+    });
+
+    // adding randomed choosed photo photo of the day
     function welcome(nasa) {
         sectionWelcome.css("background-image", "url(" + nasa.url + ')');
         sectionWelcome.css("background-repeat", "no-repeat");
@@ -43,20 +56,9 @@ $(function() {
         title.text("Title: " + nasa.title);
     }
 
-    url: "https://api.nasa.gov/planetary/apod?date=2018-10-01&hd=true&api_key=GVsnIvDsUqzDjGHPX5eS1eHLsVI09H3qwq9gPw3p"
-
+    // downloading photos of Mars from NASA API
     $.ajax({
-        url: url + date + "&" + hd + "&" + apiKey
-    }).done(function(response) {
-        welcome(response);
-    }).fail(function(error) {
-        console.log(error);
-    });
-
-    var urlMars = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&";
-
-    $.ajax({
-        url: urlMars + "&" + apiKey
+        url: urlMars + apiKey
     }).done(function(response) {
         insertPhotos(response);
         console.log(response);
@@ -64,6 +66,7 @@ $(function() {
         console.log(error);
     });
 
+    // inserting downloaded photos to gallery
     function insertPhotos(nasa) {
         var galleryMarsItems = $(".marsItem");
         if (nasa && document.readyState === "complete") {
@@ -73,12 +76,12 @@ $(function() {
         }
     };
 
+    // event showing/hiddening more photos of gallery
     $("span").on('click', function() {
         $(".gallery1").toggle("hidden");
     });
 
-    var mobile = window.matchMedia("(min-width: 1024px)");
-
+    // media queries for less than 1024 for both galleries
     if ($(window).width() >= 1024) {
         $(".first div").on("click", function() {
             var urlMars = $(this).css("background-image");
