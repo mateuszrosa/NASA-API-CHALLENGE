@@ -11,9 +11,9 @@ $(function() {
     var mobile = window.matchMedia("(min-width: 1024px)");
 
     // preloading
-    $(document).ajaxStop(function() {
-        $("#loader-wrapper").hide();
-    });
+    // $(document).ajaxStop(function() {
+    //     $("#loader-wrapper").hide();
+    // });
 
     // randoming date function
     function randomingDate() {
@@ -38,13 +38,13 @@ $(function() {
     }
 
     // downloading photo of a day from NASA API
-    $.ajax({
-        url: url + "date=" + res + "&hd=true&" + apiKey
-    }).done(function(response) {
-        welcome(response);
-    }).fail(function(error) {
-        console.log(error);
-    });
+    // $.ajax({
+    //     url: url + "date=" + res + "&hd=true&" + apiKey
+    // }).done(function(response) {
+    //     welcome(response);
+    // }).fail(function(error) {
+    //     console.log(error);
+    // });
 
     // adding randomed choosed photo photo of the day
     function welcome(nasa) {
@@ -57,14 +57,14 @@ $(function() {
     }
 
     // downloading photos of Mars from NASA API
-    $.ajax({
-        url: urlMars + apiKey
-    }).done(function(response) {
-        insertPhotos(response);
-        console.log(response);
-    }).fail(function(response) {
-        console.log(error);
-    });
+    // $.ajax({
+    //     url: urlMars + apiKey
+    // }).done(function(response) {
+    //     insertPhotos(response);
+    //     console.log(response);
+    // }).fail(function(response) {
+    //     console.log(error);
+    // });
 
     // inserting downloaded photos to gallery
     function insertPhotos(nasa) {
