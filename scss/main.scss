@@ -151,17 +151,10 @@
                             display: block;
                             height: 120px;
                             margin: 0 auto;
-                            @media (min-width: 1024px) {
+                            @media (min-width: 768px) {
                                 float: left;
                             }
                         }
-                    }
-                    img {
-                        width: 250px;
-                        display: block;
-                        height: 120px;
-                        margin: 0 auto;
-                        float: right;
                     }
                 }
                 .hidden {
