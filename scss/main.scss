@@ -154,6 +154,9 @@
                             text-align: center;
                             border-bottom: 2px solid #fff;
                             font-size: 20px;
+                            a {
+                                text-decoration: underline;
+                            }
                             @media (min-width: 768px) {
                                 border: none;
                                 font-size: 30px;
@@ -170,10 +173,20 @@
                             font-size: 50px;
                             text-align: center;
                         }
+                        @media (min-width: 1024px) {
+                            width: 50%;
+                            float: left;
+                            margin-top: 55px;
+                            text-align: right;
+                        }
                     }
                     a {
                         text-decoration: none;
                         color: #fff;
+                        @media (min-width: 1024px) {
+                            width: 50%;
+                            float: left;
+                        }
                         img {
                             width: 150px;
                             display: block;
@@ -182,6 +195,10 @@
                             margin-top: 10px;
                             @media (min-width: 768px) {
                                 margin-top: 0;
+                            }
+                            @media (min-width: 1024px) {
+                                margin-top: 25px;
+                                margin-left: 75px;
                             }
                         }
                     }
