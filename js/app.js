@@ -61,7 +61,6 @@ $(function() {
         url: urlMars + apiKey
     }).done(function(response) {
         insertPhotos(response);
-        console.log(response);
     }).fail(function(response) {
         console.log(error);
     });
