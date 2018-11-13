@@ -77,7 +77,7 @@ $(function() {
 
     // event showing/hiddening more photos of gallery
     $("span").on('click', function() {
-        $(".gallery1").toggle("hidden");
+        $(".gallery1").toggleClass("hidden");
     });
 
     // media queries for less than 1024 for both galleries
