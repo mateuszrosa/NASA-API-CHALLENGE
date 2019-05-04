@@ -83,7 +83,7 @@ $(function() {
     // media queries for less than 1024 for both galleries
     if ($(window).width() >= 1024) {
         $(".first div").on("click", function() {
-            var urlMars = $(this).css("background-image");
+            const urlMars = $(this).css("background-image");
             $(".blank").toggle("hidden");
             $(".blank").css("background-image", urlMars);
             $(".blank").css("background-repeat", "no-repeat");
@@ -93,7 +93,7 @@ $(function() {
 
     if ($(window).width() >= 1024) {
         $(".second div").on("click", function() {
-            var urlMars = $(this).css("background-image");
+            const urlMars = $(this).css("background-image");
             $(".blank1").toggle("hidden");
             $(".blank1").css("background-image", urlMars);
             $(".blank1").css("background-repeat", "no-repeat");
