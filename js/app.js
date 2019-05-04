@@ -1,14 +1,14 @@
 $(function() {
 
     // variables
-    var sectionWelcome = $("#welcome");
-    var url = "https://api.nasa.gov/planetary/apod?";
-    var apiKey = "api_key=GVsnIvDsUqzDjGHPX5eS1eHLsVI09H3qwq9gPw3p";
-    var dateOfPhoto = $("#date");
-    var title = $("#title");
-    var urlMars = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&";
-    var res = randomingDate();
-    var mobile = window.matchMedia("(min-width: 1024px)");
+    const sectionWelcome = $("#welcome");
+    const url = "https://api.nasa.gov/planetary/apod?";
+    const apiKey = "api_key=GVsnIvDsUqzDjGHPX5eS1eHLsVI09H3qwq9gPw3p";
+    const dateOfPhoto = $("#date");
+    const title = $("#title");
+    const urlMars = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&";
+    const res = randomingDate();
+    const mobile = window.matchMedia("(min-width: 1024px)");
 
     // preloading
     $(document).ajaxStop(function() {
@@ -17,22 +17,22 @@ $(function() {
 
     // randoming date function
     function randomingDate() {
-        var year = new Date();
-        var year1 = year.getFullYear();
-        var month = new Date();
-        var month1 = month.getMonth();
-        var day = new Date();
-        var day1 = day.getDay();
-        var randomYear = Math.floor(Math.random() * (+year1 - +1996) + 1996);
-        var randomMonth = Math.floor((Math.random() * 12) + 1);
-        var randomDay = Math.floor((Math.random() * 30) + 1);
+        const year = new Date();
+        const year1 = year.getFullYear();
+        const month = new Date();
+        const month1 = month.getMonth();
+        const day = new Date();
+        const day1 = day.getDay();
+        const randomYear = Math.floor(Math.random() * (+year1 - +1996) + 1996);
+        let randomMonth = Math.floor((Math.random() * 12) + 1);
+        let randomDay = Math.floor((Math.random() * 30) + 1);
         if (randomYear == year1) {
-            var randomMonth = Math.floor((Math.random() * month1) + 1);
+            let randomMonth = Math.floor((Math.random() * month1) + 1);
             if (randomMonth == month1) {
-                var randomDay = Math.floor((Math.random() * day1) + 1);
+                let randomDay = Math.floor((Math.random() * day1) + 1);
             }
         } else {
-            var randomMonth = Math.floor((Math.random() * 12) + 1);
+            let randomMonth = Math.floor((Math.random() * 12) + 1);
         }
         return randomYear + "-" + randomMonth + "-" + randomDay;
     }
@@ -67,7 +67,7 @@ $(function() {
 
     // inserting downloaded photos to gallery
     function insertPhotos(nasa) {
-        var galleryMarsItems = $(".marsItem");
+        const galleryMarsItems = $(".marsItem");
         if (nasa && document.readyState === "complete") {
             galleryMarsItems.each(function() {
                 $(this).css("background-image", "url(" + nasa.photos[Math.floor((Math.random() * 800) + 1)].img_src + ')');
